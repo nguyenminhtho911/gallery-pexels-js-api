@@ -44,13 +44,13 @@ const getImages = (apiURL) => {
 
 const loadMoreImages = () => {
   currentPage++; // Increment currentPage by 1
+  // If searchTerm has some value then call API with search term else call default API
   let apiUrl = `https://api.pexels.com/v1/curated?page=${currentPage}&per_page=${perPage}`;
+  apiUrl = searchTerm ? `https://api.pexels.com/v1/search?query=${searchTerm}&page=${currentPage}&per_page=${perPage}` : apiUrl;
   getImages(apiUrl);
 }
 
 const loadSearchImages = (e) => {
-  // If the search input is empty, set the search term to null and return from here
-  if (e.target.value === "") return searchTerm = null;
   // If pressed key is Enter, update the current page, search term & call the getImages
   if (e.key === "Enter") {
       currentPage = 1;

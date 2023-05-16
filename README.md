@@ -24,3 +24,7 @@ columns: 100px 3; /* width tối thiểu là 100px, chia 3 cột */
   + `imageWrapper.innerHTML = ""` cho về rỗng
   + chuyển `currentPage` về 1
   + call API với `searchTerm` tương ứng
+- Xử lý search + loadmore
+  + Khi bấm __loadmore__
+    + Nếu có `searchTerm` -> call API __search__ với `currentPage++`
+    + else call API __loadmore__ mặc định
