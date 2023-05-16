@@ -19,3 +19,8 @@ columns: 100px 3; /* width tối thiểu là 100px, chia 3 cột */
 - Tăng `currentPage` lên 1 -> Gọi API với `currentPage` đó
 - Khi đang gọi API thì `disabled` nút loadmore, gọi xong có `respon` thì trả lại
 
+## Search API
+- Bấm search
+  + `imageWrapper.innerHTML = ""` cho về rỗng
+  + chuyển `currentPage` về 1
+  + call API với `searchTerm` tương ứng
