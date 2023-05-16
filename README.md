@@ -10,5 +10,10 @@ text 3  | text 6  | text 9
 ```css
 columns: 100px 3; /* width tối thiểu là 100px, chia 3 cột */
 ```
+## Fetching data images gallery by API
+- Đăng ký API key trên `pexels.com`
+- Dùng `fetch` gọi API
+- Có `data` `innerHTML` vào layout
+
 
 
