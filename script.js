@@ -1,4 +1,5 @@
 const imageWrapper = document.querySelector(".images");
+const loadMoreBtn = document.querySelector(".gallery .load-more");
 
 const apiKey = "yO0VLqpuSLZ0ZXN6nAEvrqwrDHSDHSzhqawn9fBDXZMUC3Yw3xeUQd83";
 const perPage = 15;

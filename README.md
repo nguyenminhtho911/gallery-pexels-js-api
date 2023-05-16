@@ -15,5 +15,6 @@ columns: 100px 3; /* width tối thiểu là 100px, chia 3 cột */
 - Dùng `fetch` gọi API
 - Có `data` `innerHTML` vào layout
 
-
+## Load more API
+- Tăng `currentPage` lên 1 -> Gọi API với `currentPage` đó
 
