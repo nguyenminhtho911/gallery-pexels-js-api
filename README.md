@@ -28,3 +28,5 @@ columns: 100px 3; /* width tối thiểu là 100px, chia 3 cột */
   + Khi bấm __loadmore__
     + Nếu có `searchTerm` -> call API __search__ với `currentPage++`
     + else call API __loadmore__ mặc định
+- Nếu không nhập gì vào input search
+  + `return searchTerm = null` -> thoát hàm call API search 
