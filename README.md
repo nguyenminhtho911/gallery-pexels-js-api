@@ -17,4 +17,5 @@ columns: 100px 3; /* width tối thiểu là 100px, chia 3 cột */
 
 ## Load more API
 - Tăng `currentPage` lên 1 -> Gọi API với `currentPage` đó
+- Khi đang gọi API thì `disabled` nút loadmore, gọi xong có `respon` thì trả lại
 

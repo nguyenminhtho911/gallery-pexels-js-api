@@ -29,10 +29,14 @@ const getImages = (apiURL) => {
   var config = {
     headers: { Authorization: apiKey },
   };
+  loadMoreBtn.innerText = "Loading...";
+  loadMoreBtn.classList.add("disabled");
   fetch(apiURL, config)
     .then((res) => res.json())
     .then((data) => {
       generateHTML(data.photos);
+      loadMoreBtn.innerText = "Load More";
+      loadMoreBtn.classList.remove("disabled");
     })
     .catch(() => alert("Failed to load images!"));
 };
