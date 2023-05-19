@@ -29,4 +29,9 @@ columns: 100px 3; /* width tối thiểu là 100px, chia 3 cột */
     + Nếu có `searchTerm` -> call API __search__ với `currentPage++`
     + else call API __loadmore__ mặc định
 - Nếu không nhập gì vào input search
-  + `return searchTerm = null` -> thoát hàm call API search 
+  + `return searchTerm = null` -> thoát hàm call API search
+
+## Downloading image
+
+- call API với địa chỉ hình
+- nhận được `respon` -> chuyển `img` đã nhận thành `blob`, tạo liên kết tải xuống và tải xuống

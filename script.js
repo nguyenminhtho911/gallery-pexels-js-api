@@ -7,6 +7,18 @@ const perPage = 15;
 let currentPage = 1;
 let searchTerm = null;
 
+const downloadImg = (imgUrl) => {
+  // Converting received img to blob, creating its download link, & downloading it
+  fetch(imgUrl)
+    .then(res => res.blob()) // -> 'Blob' đại diện cho dữ liệu nhị phân của hình ảnh
+    .then(blob => {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob); // tạo 1 URL duy nhất đại diện cho cho 'Blob' ->  tạo liên kết trực tiếp đến hình ảnh
+      a.download = new Date().getTime(); // Đặt tên cho tệp tải xuống
+      a.click();
+  }).catch(() => alert("Failed to download image!"));
+}
+
 const generateHTML = (images) => {
   // Making li of all fetched images and adding them to the existing image wrapper
   imageWrapper.innerHTML += images.map(img =>
@@ -17,7 +29,7 @@ const generateHTML = (images) => {
                   <i class="uil uil-camera"></i>
                   <span>${img.photographer}</span>
               </div>
-              <button onclick="downloadImg('${img.src.large2x}');">
+              <button onclick="downloadImg('${img.src.large2x}')">
                   <i class="uil uil-import"></i>
               </button>
           </div>
