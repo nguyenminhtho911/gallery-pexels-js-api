@@ -21,9 +21,11 @@ const downloadImg = (imgUrl) => {
   }).catch(() => alert("Failed to download image!"));
 }
 
-const showLightbox = () => {
+const showLightbox = (name, img) => {
   lightbox.classList.add("show");
   document.body.style.overflow = "hidden";
+  lightbox.querySelector("img").src = img;
+  lightbox.querySelector("span").innerText = name;
 }
 const hideLightbox = () => {
   // Hiding lightbox on close icon click
@@ -35,7 +37,7 @@ const generateHTML = (images) => {
   // Making li of all fetched images and adding them to the existing image wrapper
   imageWrapper.innerHTML += images.map(img =>
       `<li class="card">
-          <img onclick="showLightbox()" src="${img.src.large2x}" alt="img">
+          <img onclick="showLightbox('${img.photographer}', '${img.src.large2x}')" src="${img.src.large2x}" alt="img">
           <div class="details">
               <div class="photographer">
                   <i class="uil uil-camera"></i>

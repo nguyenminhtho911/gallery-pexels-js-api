@@ -38,3 +38,4 @@ columns: 100px 3; /* width tối thiểu là 100px, chia 3 cột */
 
 ## Lightbox
 - show lightbox lên, và đóng lightbox lại
+- Lấy hình và name của hình được click hiển thị vào trong Lightbox
