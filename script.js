@@ -1,6 +1,8 @@
 const imageWrapper = document.querySelector(".images");
 const loadMoreBtn = document.querySelector(".gallery .load-more");
 const searchInput = document.querySelector(".search input");
+const lightbox = document.querySelector(".lightbox");
+const closeImgBtn = lightbox.querySelector(".close-icon");
 
 const apiKey = "yO0VLqpuSLZ0ZXN6nAEvrqwrDHSDHSzhqawn9fBDXZMUC3Yw3xeUQd83";
 const perPage = 15;
@@ -17,6 +19,18 @@ const downloadImg = (imgUrl) => {
       a.download = new Date().getTime(); // Đặt tên cho tệp tải xuống
       a.click();
   }).catch(() => alert("Failed to download image!"));
+}
+
+const showLightbox = (name, img) => {
+  lightbox.classList.add("show");
+  document.body.style.overflow = "hidden";
+  lightbox.querySelector("img").src = img;
+  lightbox.querySelector("span").innerText = name;
+}
+const hideLightbox = () => {
+  // Hiding lightbox on close icon click
+  lightbox.classList.remove("show");
+  document.body.style.overflow = "auto";
 }
 
 const generateHTML = (images) => {
@@ -80,3 +94,4 @@ getImages(
 
 loadMoreBtn.addEventListener("click", loadMoreImages);
 searchInput.addEventListener("keyup", loadSearchImages);
+closeImgBtn.addEventListener("click", hideLightbox);

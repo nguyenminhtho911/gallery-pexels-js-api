@@ -35,3 +35,7 @@ columns: 100px 3; /* width tối thiểu là 100px, chia 3 cột */
 
 - call API với địa chỉ hình
 - nhận được `respon` -> chuyển `img` đã nhận thành `blob`, tạo liên kết tải xuống và tải xuống
+
+## Lightbox
+- show lightbox lên, và đóng lightbox lại
+- Lấy hình và name của hình được click hiển thị vào trong Lightbox
