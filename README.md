@@ -39,3 +39,7 @@ columns: 100px 3; /* width tối thiểu là 100px, chia 3 cột */
 ## Lightbox
 - show lightbox lên, và đóng lightbox lại
 - Lấy hình và name của hình được click hiển thị vào trong Lightbox
+
+### Download image from Lightbox
+- Thêm thuộc tính tùy chỉnh `data-*` cho element `button` HTML -> Lấy src của image -> `data-name=src_image`
+- Khi click button -> target đến thuộc tính `dataset` truy cập vào `name` -> lấy được `src_image` -> gọi hàm `downloadImg` 

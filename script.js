@@ -3,6 +3,7 @@ const loadMoreBtn = document.querySelector(".gallery .load-more");
 const searchInput = document.querySelector(".search input");
 const lightbox = document.querySelector(".lightbox");
 const closeImgBtn = lightbox.querySelector(".close-icon");
+const downloadImgBtn = lightbox.querySelector(".uil-import");
 
 const apiKey = "yO0VLqpuSLZ0ZXN6nAEvrqwrDHSDHSzhqawn9fBDXZMUC3Yw3xeUQd83";
 const perPage = 15;
@@ -26,6 +27,7 @@ const showLightbox = (name, img) => {
   document.body.style.overflow = "hidden";
   lightbox.querySelector("img").src = img;
   lightbox.querySelector("span").innerText = name;
+  downloadImgBtn.setAttribute("data-img", img);
 }
 const hideLightbox = () => {
   // Hiding lightbox on close icon click
@@ -95,3 +97,4 @@ getImages(
 loadMoreBtn.addEventListener("click", loadMoreImages);
 searchInput.addEventListener("keyup", loadSearchImages);
 closeImgBtn.addEventListener("click", hideLightbox);
+downloadImgBtn.addEventListener("click", (e) => downloadImg(e.target.dataset.img));
